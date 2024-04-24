@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ResetLevelWithButton : MonoBehaviour
+public class ResetLevelOnCollision : MonoBehaviour
 {
-    [SerializeField]
-    KeyCode keyRestart;
-
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKey(keyRestart))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
